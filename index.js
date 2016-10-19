@@ -1,11 +1,11 @@
 var xmlParser = require('xml2json');
 var child = require('child_process').spawn;
-var path = require('path');
+var fs = require('fs');
 
 exports.parse = function(file, callback) {
   var xml = "";
 
-  path.exists(file, function(exists){
+  fs.exists(file, function(exists){
     if (!exists) {
       calllack(new Error('file does not exist'));
     }
